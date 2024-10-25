@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/additional_info_item.dart';
 import 'package:weather_app/hourly_forecast_item.dart';
+import 'package:weather_app/ripple_wrapper.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -34,28 +35,31 @@ class WeatherScreen extends StatelessWidget {
                   elevation: 10,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20)),
-                  child: const Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Column(
-                      children: [
-                        Text(
-                          "18C",
-                          style: TextStyle(
-                            fontSize: 32,
-                            fontWeight: FontWeight.bold,
+                  child: RippleWrapper(
+                    borderRadius: BorderRadius.circular(20),
+                    child: const Padding(
+                      padding: EdgeInsets.all(16.0),
+                      child: Column(
+                        children: [
+                          Text(
+                            "18C",
+                            style: TextStyle(
+                              fontSize: 32,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        Icon(
-                          Icons.cloud,
-                          size: 96,
-                        ),
-                        Text(
-                          "Rain",
-                          style: TextStyle(
-                            fontSize: 20,
+                          Icon(
+                            Icons.cloud,
+                            size: 96,
                           ),
-                        )
-                      ],
+                          Text(
+                            "Rain",
+                            style: TextStyle(
+                              fontSize: 20,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
